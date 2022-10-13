@@ -2,33 +2,35 @@
 // Created by Egor on 10/12/2022.
 //
 
-#include "../headers/Bicycle.h"
+#include "../headers/Moped.h"
 
 //  Constructors/Destructors
-Bicycle::Bicycle(string factoryName, int e, string brand) {
+Moped::Moped(string factoryName, int e, string brand, double maxSpeed) {
     this->factoryName = factoryName;
     this->employees = e;
     this->brand = brand;
+    this->maxSpeed = maxSpeed;
 }
 
-Bicycle::~Bicycle() {
+Moped::~Moped() {
     factoryName.clear();
     brand.clear();
 };
 
 //  Getters/Setters
-void Bicycle::setBrand(string brand) {
-    this->brand = brand;
+void Moped::setMaxSpeed(double value) {
+    maxSpeed = value;
 }
 
-string Bicycle::getBrand() const { return brand; }
+double Moped::getMaxSpeed() const { return maxSpeed; }
 
 //  Overload Method
-ostream &operator<<(ostream &out, Bicycle &object) {
+ostream &operator<<(ostream &out, Moped &object) {
     cout << "Characteristics:"
          << endl << "\tFactory name: " << object.getFactoryName()
          << endl << "\tEmployees: " << object.getEmpoyees()
          << endl << "\tBrand: " << object.getBrand()
+         << endl << "\tMax Speed: " << object.getMaxSpeed() << " km/h"
          << endl;
 
     return out;

@@ -4,15 +4,13 @@
 
 #include "Factory.h"
 
-using namespace std;
-
 //  Constructors/Destructors
-Factory::Factory(std::string factoryName, int e) {
+Factory::Factory(string factoryName, int e) {
     this->factoryName = factoryName;
     employees = e;
 }
 
-Factory::~Factory(){ factoryName.clear(); };
+Factory::~Factory() { factoryName.clear(); };
 
 //  Getters/Setters
 void Factory::setEmpoyees(int emloyees) {
@@ -29,11 +27,10 @@ string Factory::getFactoryName() const { return factoryName; }
 
 //  Overload Method
 ostream &operator<<(ostream &out, Factory &object) {
-    cout << "Factory characteristics:" << endl
-    << endl << "\tFactory name: " << object.getFactoryName()
-    << endl << "\tEmployees: " << object.getEmpoyees()
-//    << endl << "\tBrand: " << object.getBrand()
-    << endl;
+    cout << "Factory characteristics:"
+         << endl << "\tFactory name: " << object.getFactoryName()
+         << endl << "\tEmployees: " << object.getEmpoyees()
+         << endl;
 
     return out;
 }

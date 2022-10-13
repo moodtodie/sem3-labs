@@ -7,21 +7,26 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Factory {
 protected:
-    std::string factoryName;
+    string factoryName;
     int employees;
 public:
-    Factory(std::string factoryName = "", int e = 1);
+    Factory(string factoryName = "", int e = 1);
+
     ~Factory();
 
     void setEmpoyees(int emloyees);
+
     int getEmpoyees() const;
 
-    void setFactoryName(std::string name);
-    std::string getFactoryName() const;
+    void setFactoryName(string name);
 
-    friend std::ostream& operator <<(std::ostream &out, Factory& object);
+    string getFactoryName() const;
+
+    friend ostream &operator<<(ostream &out, Factory &object);
 };
 
 #endif //LAB3_V12_FACTORY_H
