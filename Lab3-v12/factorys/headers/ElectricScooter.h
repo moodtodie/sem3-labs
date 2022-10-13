@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class ElectricScooter : virtual Scooter {
+class ElectricScooter : virtual public Scooter {
 protected:
     double power;
 public:

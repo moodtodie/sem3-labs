@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class Motorcycle : virtual ElectricScooter, virtual Moped{
+class Motorcycle : virtual public ElectricScooter, virtual public Moped{
 protected:
     double consumption;
 public:

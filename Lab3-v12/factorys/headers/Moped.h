@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Moped : virtual Bicycle {
+class Moped : virtual public Bicycle {
 protected:
     double maxSpeed;
 public:

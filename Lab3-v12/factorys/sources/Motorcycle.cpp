@@ -12,8 +12,7 @@ Motorcycle::Motorcycle(string factoryName, int e, string brand, double maxSpeed,
     this->power = power;
     this->brand = brand;
     this->maxSpeed = maxSpeed;
-
-    this->consumption = consumption
+    this->consumption = consumption;
 }
 
 Motorcycle::~Motorcycle() {
@@ -38,7 +37,7 @@ ostream &operator<<(ostream &out, Motorcycle &object) {
          << endl << "\tMax Speed: " << object.getMaxSpeed() << " km/h"
          << endl << "\tPower: " << object.getPower() << " HP"
          << endl << "\tWeight: " << object.getWeight() << " kg"
-         << endl << "\tConsumption: " << object.getConsumption() << "l per 100 km"
+         << endl << "\tConsumption: " << object.getConsumption() << " l per 100 km"
          << endl;
 
     return out;
