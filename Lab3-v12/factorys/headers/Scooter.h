@@ -1,7 +1,3 @@
-//
-// Created by Egor on 10/13/2022.
-//
-
 #ifndef LAB3_V12_SCOOTER_H
 #define LAB3_V12_SCOOTER_H
 

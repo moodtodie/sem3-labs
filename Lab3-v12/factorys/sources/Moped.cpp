@@ -1,7 +1,3 @@
-//
-// Created by Egor on 10/12/2022.
-//
-
 #include "../headers/Moped.h"
 
 //  Constructors/Destructors

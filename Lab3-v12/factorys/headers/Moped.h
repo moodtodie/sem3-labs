@@ -1,7 +1,3 @@
-//
-// Created by Egor on 10/12/2022.
-//
-
 #ifndef LAB3_V12_MOPED_H
 #define LAB3_V12_MOPED_H
 

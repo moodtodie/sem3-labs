@@ -1,7 +1,3 @@
-//
-// Created by Egor on 10/13/2022.
-//
-
 #include "../headers/Scooter.h"
 
 //  Constructors/Destructors
