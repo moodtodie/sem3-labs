@@ -5,8 +5,8 @@
 * [Lab 1](https://github.com/moodtodie/sem3-labs/blob/main/Lab1-v6/main.cpp) ([Description](#Lab-1-variant-6));
 * [Lab 2](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1/) ([Description](#Lab-2-variant-1));
 * [Lab 3](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12/) ([Description](#Lab-3-variant-12));
-* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/) ([Description](#Lab-4-variant-12));
-* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/) ([Description](#Lab-5-variant-12));
+* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp) ([Description](#Lab-4-variant-12));
+* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp) ([Description](#Lab-5-variant-12));
 * Lab 6 ([Description](#Lab-6-variant-6));
 * Lab 7 ([Description](#Lab-7-variant-12));
 * Lab 8 ([Description](#Lab-8-variant-3));
@@ -14,7 +14,7 @@
 * Lab 10 ([Description](#Lab-10-variant-12));
 ___________________________________________
 
-### Lab 1 variant 6
+### Lab 1 variant 6 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab1-v6/main.cpp)
 
 #### Цель работы:
 Создание консольной программы включающей объекты и реализующей члены объектов c использованием спецификаторов доступа, конструкторы и деструктор, статические члены классо , особую инициализацию членов класса, дружественные функции и классы.
@@ -34,7 +34,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 2 variant 1
+### Lab 2 variant 1 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1)
 
 #### Цель работы:
 Создание консольной программы реализующей перегрузку функции (в том числе с параметрами по умолчанию), перегрузку унарных и бинарных операторов, (в том числе и с помощью дружественных функций), реализацию функции преобразования типов.
@@ -64,7 +64,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 3 variant 12
+### Lab 3 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12)
 
 #### Цель работы:
 Создание консольной программы для реализации иерархии классов с использованием простого и множественного наследования, исследование спецификаций наследования, выполнение передачи параметров конструктору базового класса, разрешение с помощью виртуального наследования неоднозначностей при множественном наследовании.
@@ -84,7 +84,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 4 variant 12
+### Lab 4 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp)
 
 #### Цель работы:
 Создание консольной программы для реализации абстрактных классов и чисто виртуальных функций, создания и наследования виртуальных функций, изучения статического и динамического полиморфизма на основе виртуальных функций, включая виртуальные деструкторы.
@@ -104,7 +104,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 5 variant 12
+### Lab 5 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp)
 
 #### Цель работы:
 Создание консольной программы для реализации шаблонов функций и классов, включая: явные специализации шаблонных функций и классов, стандартные типы в шаблонных классах.
