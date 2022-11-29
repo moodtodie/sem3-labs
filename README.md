@@ -2,22 +2,22 @@
 
 ## Labs
 
-* [Lab 1](https://github.com/moodtodie/sem3-labs/blob/main/Lab1-v6/main.cpp) ([Description](#Lab-1-variant-6));
-* [Lab 2](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1/) ([Description](#Lab-2-variant-1));
-* [Lab 3](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12/) ([Description](#Lab-3-variant-12));
-* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp) ([Description](#Lab-4-variant-12));
-* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp) ([Description](#Lab-5-variant-12));
-* Lab 6 ([Description](#Lab-6-variant-6));
-* Lab 7 ([Description](#Lab-7-variant-12));
-* Lab 8 ([Description](#Lab-8-variant-3));
-* Lab 9 ([Description](#Lab-9-variant-12));
-* Lab 10 ([Description](#Lab-10-variant-12));
+* [Lab 1](https://github.com/moodtodie/sem3-labs/blob/main/Lab1-v6/main.cpp) ([Description](#Lab-1-variant-6-[Code]));
+* [Lab 2](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1/) ([Description](#Lab-2-variant-1-[Code]));
+* [Lab 3](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12/) ([Description](#Lab-3-variant-12-[Code]));
+* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp) ([Description](#Lab-4-variant-12-[Code]));
+* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp) ([Description](#Lab-5-variant-12-[Code]));
+* [Lab 6](https://github.com/moodtodie/sem3-labs/tree/main/Lab6-v6/main.cpp) ([Description](#Lab-6-variant-6-[Code]));
+* [Lab 7](https://github.com/moodtodie/sem3-labs/tree/main/Lab7-v12/main.cpp) ([Description](#Lab-7-variant-12-[Code]));
+* [Lab 8](https://github.com/moodtodie/sem3-labs/tree/main/Lab8-v3/main.cpp) ([Description](#Lab-8-variant-3-[Code]));
+* [Lab 9](https://github.com/moodtodie/sem3-labs/tree/main/Lab9-v12/main.cpp) ([Description](#Lab-9-variant-12-[Code]));
+* [Lab 10](https://github.com/moodtodie/sem3-labs/tree/main/Lab10-v12/main.cpp) ([Description](#Lab-10-variant-12-[Code]));
 ___________________________________________
 
 ### Lab 1 variant 6 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab1-v6/main.cpp)
 
 #### Цель работы:
-Создание консольной программы включающей объекты и реализующей члены объектов c использованием спецификаторов доступа, конструкторы и деструктор, статические члены классо , особую инициализацию членов класса, дружественные функции и классы.
+Создание консольной программы включающей объекты и реализующей члены объектов c использованием спецификаторов доступа, конструкторы и деструктор, статические члены классов, особую инициализацию членов класса, дружественные функции и классы.
 
 #### Задание
     Создать класс «Задание» со статистическими данными: id — приложение, name — название, result — процент выполнени. 
@@ -123,7 +123,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 6 variant 6
+### Lab 6 variant 6 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab6-v6/main.cpp)
 
 #### Цель работы:
 Создание консольной программы для реализации обработки ошибок с использованием механизма обработки исключительных ситуаций, создание специальных классов обработки исключительных ситуаций, рассмотрение замены обработчиков функций terminate() и unexpected() собственными функциями.
@@ -140,7 +140,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 7 variant 12
+### Lab 7 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab7-v12/main.cpp)
 
 #### Цель работы:
 Создание консольной программы для реализации работы с данными, которые хранятся в текстовых и бинарных файлах с использованием: перегрузки операторов ввода-вывода, управления курсорами чтения и записи, с обработкой ошибок состояния потока ввода-вывода, а также вывод данных на консоль с использованием возможностей управления форматом флагами и манипуляторами, создание манипуляторов.
@@ -167,7 +167,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 8 variant 3
+### Lab 8 variant 3 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab8-v3/main.cpp)
 
 #### Цель работы:
 Создание консольной программы с реализацией объектов для хранения данных в динамической памяти на основе шаблонных классов, изучение указателей на объекты.
@@ -191,7 +191,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 9 variant 12
+### Lab 9 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab9-v12/main.cpp)
 
 #### Цель работы:
 Создание консольной программы с реализацией объектов, которые находятся в собственном пространстве имен, реализация взаимодействия классов путем наследования, композиции и агрегации, рассмотрение особенностей построения диаграммы классов.
@@ -214,7 +214,7 @@ ___________________________________________
 
 ___________________________________________
 
-### Lab 10 variant 12
+### Lab 10 variant 12 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab10-v12/main.cpp)
 
 #### Цель работы:
 Создание консольной программы для представления данных с использованием контейнеров и обработки их с использованием алгоритмов и функторов библиотеки STL.
