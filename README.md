@@ -2,16 +2,16 @@
 
 ## Labs
 
-* [Lab 1](https://github.com/moodtodie/sem3-labs/blob/main/Lab1-v6/main.cpp) ([Description](#Lab-1-variant-6-[[Code]]));
-* [Lab 2](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1/) ([Description](#Lab-2-variant-1-[[Code]]));
-* [Lab 3](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12/) ([Description](#Lab-3-variant-12-[[Code]]));
-* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp) ([Description](#Lab-4-variant-12-[[Code]]));
-* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp) ([Description](#Lab-5-variant-12-[[Code]]));
-* [Lab 6](https://github.com/moodtodie/sem3-labs/tree/main/Lab6-v6/main.cpp) ([Description](#Lab-6-variant-6-[[Code]]));
-* [Lab 7](https://github.com/moodtodie/sem3-labs/tree/main/Lab7-v12/main.cpp) ([Description](#Lab-7-variant-12-[[Code]]));
-* [Lab 8](https://github.com/moodtodie/sem3-labs/tree/main/Lab8-v3/main.cpp) ([Description](#Lab-8-variant-3-[[Code]]));
-* [Lab 9](https://github.com/moodtodie/sem3-labs/tree/main/Lab9-v12/main.cpp) ([Description](#Lab-9-variant-12-[[Code]]));
-* [Lab 10](https://github.com/moodtodie/sem3-labs/tree/main/Lab10-v12/main.cpp) ([Description](#Lab-10-variant-12-[[Code]]));
+* [Lab 1](https://github.com/moodtodie/sem3-labs/blob/main/Lab1-v6/main.cpp) ([Description](#Lab-1-variant-6-code));
+* [Lab 2](https://github.com/moodtodie/sem3-labs/tree/main/Lab2-v1/) ([Description](#Lab-2-variant-1-code));
+* [Lab 3](https://github.com/moodtodie/sem3-labs/tree/main/Lab3-v12/) ([Description](#Lab-3-variant-12-code));
+* [Lab 4](https://github.com/moodtodie/sem3-labs/tree/main/Lab4-v12/main.cpp) ([Description](#Lab-4-variant-12-code));
+* [Lab 5](https://github.com/moodtodie/sem3-labs/tree/main/Lab5-v12/main.cpp) ([Description](#Lab-5-variant-12-code));
+* [Lab 6](https://github.com/moodtodie/sem3-labs/tree/main/Lab6-v6/main.cpp) ([Description](#Lab-6-variant-6-code));
+* [Lab 7](https://github.com/moodtodie/sem3-labs/tree/main/Lab7-v12/main.cpp) ([Description](#Lab-7-variant-12-code));
+* [Lab 8](https://github.com/moodtodie/sem3-labs/tree/main/Lab8-v3/main.cpp) ([Description](#Lab-8-variant-3-code));
+* [Lab 9](https://github.com/moodtodie/sem3-labs/tree/main/Lab9-v12/main.cpp) ([Description](#Lab-9-variant-12-code));
+* [Lab 10](https://github.com/moodtodie/sem3-labs/tree/main/Lab10-v12/main.cpp) ([Description](#Lab-10-variant-12-code));
 ___________________________________________
 
 ### Lab 1 variant 6 [[Code]](https://github.com/moodtodie/sem3-labs/tree/main/Lab1-v6/main.cpp)
