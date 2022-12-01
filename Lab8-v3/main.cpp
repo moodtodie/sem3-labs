@@ -2,80 +2,72 @@
 
 using namespace std;
 
-class Exception{
+class Exception {
     string errorMsg;
 public:
-    Exception(const string& msg){ errorMsg = "Error: " + msg; }
+    Exception(const string &msg) { errorMsg = "Error: " + msg; }
 
     ~Exception() = default;
 
-    string what(){ return errorMsg; }
+    string what() { return errorMsg; }
 };
-
-/**
- * Цель работы:
-    Создание консольной программы с реализацией объектов для хранения данных
-    в динамической памяти на основе шаблонных классов, изучение указателей на объекты.
-
- * Общие требования к выполнению работы:
-    Построить шаблонный класс, который будет описывать
-    элемент хранимых данных,
-    доступ к ним,
-    сравнение элементов
-    и т.п. по необходимости.
-
- * Дополнительно к контейнеру рекомендуется реализовать класс-итератор.
-
- * В функции main создать три экземпляра шаблонного класса-контейнера для разных типов данных.
-    Работа с этими объектами должна демонстрироваться на следующих операциях:
-    добавить – просмотреть – найти – удалить – найти – просмотреть.
-
- * Проверить обработку исключительных ситуаций (например, чтение из пустого стека, дублирование объектов и т.п.).
- */
 
 template<typename T>
 class Node {
 public:
     T value;
-    Node<T>* next = nullptr;
-    Node(T value){ this->value = value; }
+    Node<T> *next = nullptr;
+
+    Node(T value) { this->value = value; }
 };
 
 template<typename T>
 class List {
-    Node<T>* firstNode;
+    Node<T> *firstNode;
 public:
-    List(){ firstNode = nullptr; }
+    List() { firstNode = nullptr; }
+
+    ~List() {
+        if (!isEmpty()) {
+            Node<T> *ptr = firstNode;
+            Node<T> *ptrNext;
+            while (ptr) {
+                ptrNext = ptr->next;
+                delete ptr;
+                ptr = ptrNext;
+            }
+        }
+    }
 
     void push(T value) {
         bool flag = false;
         try {
             if (find(value))
                 flag = true;
-        } catch (...){}
+        } catch (...) {}
         if (flag)
             throw Exception("This value is already in the list.");
 
-        auto* ptr = new Node<T>(value);
+        auto *ptr = new Node<T>(value);
         if (isEmpty()) {
             firstNode = ptr;
             return;
         }
-        Node<T>* lastNode = firstNode; // last(current)
+        Node<T> *lastNode = firstNode; // last(current)
         while (lastNode->next != nullptr)
             lastNode = lastNode->next;
         lastNode->next = ptr;
         lastNode = ptr;
     }
 
-    T pop(int index= 0){
+    T pop(int index = 0) {
         if (isEmpty())
             throw Exception("List is empty.");
         if (index < 0)
             throw Exception("index - uses an invalid value.");
 
-        Node<T>* ptr = firstNode;
-        Node<T>* lastPtr = firstNode;
+        Node<T> *ptr = firstNode;
+        Node<T> *lastPtr = firstNode;
         int i = 0;
         while (ptr) {
             if (i == index)
@@ -97,11 +89,11 @@ public:
         return tmp;
     }
 
-    int find(T value){
+    int find(T value) {
         if (isEmpty())
             throw Exception("List is empty.");
 
-        Node<T>* ptr = firstNode;
+        Node<T> *ptr = firstNode;
         int index = 0;
         while (ptr) {
             if (ptr->value == value)
@@ -117,7 +109,7 @@ public:
             cout << "List is empty." << endl;
             return;
         }
-        Node<T>* ptr = firstNode;
+        Node<T> *ptr = firstNode;
         while (ptr) {
             cout << ptr->value << " ";
             ptr = ptr->next;
@@ -125,15 +117,28 @@ public:
         cout << endl;
     }
 
-    bool isEmpty(){ return firstNode == nullptr; }
+    bool isEmpty() { return firstNode == nullptr; }
 
-    Node<T>* operator [] (const int index) {
+    size_t size() {
+        if (isEmpty())
+            return sizeof(nullptr);
+
+        int counter = 0;
+        Node<T> *ptr = firstNode;
+        while (ptr) {
+            counter++;
+            ptr = ptr->next;
+        }
+        return (sizeof(Node<T>) * counter);
+    }
+
+    Node<T> *operator[](const int index) {
         if (isEmpty())
             throw Exception("List is empty.");
         if (index < 0)
             throw Exception("index - uses an invalid value.");
 
-        Node<T>* ptr = firstNode;
+        Node<T> *ptr = firstNode;
         int i = 0;
         while (ptr) {
             if (i == index)
@@ -149,22 +154,43 @@ public:
     }
 };
 
-int main() {
-    List<int> list;
+template<typename T>
+void printExample(List<T> list, T array[5]) {
     try {
-        list.push(3);
-        list.push(16);
-        list.push(-48);
-        list.push(19);
+        for (int i = 0; i < 4; ++i)
+            list.push(array[i]);
+
+        cout << "Add elements of the array to the list (from 1st to 4th):\n  ";
         list.print();
 
-        list.pop(list.find(3));
+        cout << "We find \"" << array[2] << "\" in the list and delete it:\n  ";
+        list.pop(list.find(array[2]));
         list.print();
 
-        list.push(50);
+        cout << "Adding the 5th element of the array to the list:\n  ";
+        list.push(array[4]);
         list.print();
     } catch (Exception exception) {
         cout << exception.what() << endl;
+    } catch (...) {
+        unexpected();
     }
+}
+
+int main() {
+    List<int> list1;
+    List<double> list2;
+    List<char> list3;
+
+    cout << "\n\tExample using <Integer> type:\n";
+    int array1[] = {19, 20, -33, 41, 50};
+    printExample(list1, array1);
+    cout << "\n\tExample using <Double> type:\n";
+    double array2[] = {1.9, 0.2, -0.03, 1.45, 6.7};
+    printExample(list2, array2);
+    cout << "\n\tExample using <Char> type:\n";
+    char array3[] = {'3', 'd', 'H', '*', 'q'};
+    printExample(list3, array3);
+
     return 0;
 }
