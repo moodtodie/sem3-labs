@@ -39,19 +39,19 @@ public:
         int choice; // input int func
         switch (in.inputInt(0, 5, "Выберите тип недвижимости:")) {
             case 1:
-                addHouse();
+//                addHouse();
                 break;
             case 2:
-                addEmpty();
+//                addEmpty();
                 break;
             case 3:
-                addFlat();
+//                addFlat();
                 break;
             case 4:
-                addParking();
+//                addParking();
                 break;
             case 5:
-                addCommercial();
+//                addCommercial();
                 break;
             case 0:
                 printMainMenu();

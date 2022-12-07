@@ -5,7 +5,7 @@
 #include "MainMenu.h"
 #include "../services/Exception.h"
 #include "../services/Input.h"
-#include "AddNew.h"
+//#include "AddNew.h"
 
 void MainMenu::print(){
     system("CLS");
@@ -30,7 +30,7 @@ void MainMenu::selector() {
             break;
         case 3:
             cout << "Пункт #3" << endl;
-            AddNew();
+//            AddNew();
             break;
         case 0:
             exit();

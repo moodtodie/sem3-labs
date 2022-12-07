@@ -12,6 +12,8 @@ class House : public Piece {
     int rooms;
     int parkingSpaces;
 public:
+    House() = default;
+
     House(unsigned int id, const string &phonePrimary, const string &email, float cost, double square, const string &address, bool actuality,
           bool pond, bool plants, bool communications, int floors = 1, int rooms = 4, int parkingSpaces = 2)
             : Piece(id, phonePrimary, email, cost, square, address, actuality, pond, plants, communications) {

@@ -5,10 +5,8 @@
 #ifndef COURSEWORK_IMMOVABLE_H
 #define COURSEWORK_IMMOVABLE_H
 
-#include <locale>
 #include <iostream>
 #include <iomanip>
-//#include "../services/ContactDetails.h"
 
 using namespace std;
 
@@ -20,6 +18,14 @@ class Immovable {
         ContactDetails(const string &phonePrimary = nullptr, const string &email = nullptr) {
             phoneNumber = phonePrimary;
             this->email = email;
+        }
+
+        string getMobile(){
+            return phoneNumber;
+        }
+
+        string getEmail(){
+            return email;
         }
 
         string getContactDetails() {
@@ -35,7 +41,6 @@ class Immovable {
     };
 
     unsigned int id;
-//protected:
     bool isActual;
     float cost;
     double square;
@@ -51,11 +56,13 @@ protected:
     }
 
 public:
-    Immovable(unsigned int id, const string &phonePrimary = nullptr, const string &email = nullptr, float cost = -1,
+    Immovable() = default;
+
+    Immovable(unsigned int id, const string &phone = nullptr, const string &email = nullptr, float cost = -1,
               double square = -1,
               const std::string &address = nullptr, bool actuality = true) {
         this->id = id;  // Сделать исключение, если ID - не указан, то ОШИБКА.
-        contact = new Immovable::ContactDetails(phonePrimary, email);
+        contact = new Immovable::ContactDetails(phone, email);
         setCost(cost);
         setSquare(square);
         setAddress(address);
@@ -71,9 +78,18 @@ public:
 //        contact = *new ContactDetails(mobile, email);
 //    }
 
+
+    //  contact
     std::string getContact() {
-//        return contact.getContactDetails();
         return contact->getContactDetails();
+    }
+
+    string getMobile(){
+        return contact->getMobile();
+    }
+
+    string getEmail(){
+        return contact->getEmail();
     }
 
     //  address

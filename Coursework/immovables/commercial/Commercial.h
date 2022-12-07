@@ -11,8 +11,11 @@
 class Commercial : public Immovable {
     int type;
 public:
-    Commercial(unsigned int id, const string &phonePrimary, const string &email, float cost, double square,
-               const string &address, bool actuality, int type = -1) : Immovable(id, phonePrimary, email, cost, square, address, actuality) {
+    Commercial() = default;
+
+    Commercial(unsigned int id, const string &phone, const string &email, float cost, double square,
+               const string &address, bool actuality, int type = -1) : Immovable(id, phone, email, cost, square,
+                                                                                 address, actuality) {
         setType(type);
     }
 
@@ -28,6 +31,19 @@ public:
              << "Тип: " << printType() << endl
              << getContact() << endl << lineStr;
     }
+
+    friend ostream &operator<<(ostream &out, Commercial &commercial) {
+        out << "class commercial\n"
+            << "id " << commercial.getId() << '\n'
+            << "phone " << commercial.getMobile() << '\n'
+            << "email " << commercial.getEmail() << '\n'
+            << "cost " << commercial.getCost() << '\n'
+            << "sqr " << commercial.getSquare() << '\n'
+            << "addr " << commercial.getAddress() << '\n'
+            << "actual " << commercial.getActuality() << '\n'
+            << "type " << commercial.getType() << '\n';
+        return out;
+    };
 
     void inputType() {
         Input in;
