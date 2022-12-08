@@ -12,11 +12,12 @@
  - Наличие ямы (Только для Тип: Гараж)
  */
 
-class Parking : public Immovable{
+class Parking : public Immovable {
     int type;
 public:
     Parking(unsigned int id, const string &phonePrimary, const string &email, float cost, double square,
-            const string &address, bool actuality, int type = 3) : Immovable(id, phonePrimary, email, cost, square, address, actuality) {
+            const string &address, bool actuality, int type = 3) : Immovable(id, phonePrimary, email, cost, square,
+                                                                             address, actuality) {
         setType(type);
     }
 
@@ -33,6 +34,19 @@ public:
              << getContact() << endl << lineStr;
     }
 
+    friend ostream &operator<<(ostream &out, Parking &myClass) {
+        out << "class house\n"
+            << "id " << myClass.getId() << '\n'
+            << "phone " << myClass.getMobile() << '\n'
+            << "email " << myClass.getEmail() << '\n'
+            << "cost " << myClass.getCost() << '\n'
+            << "sqr " << myClass.getSquare() << '\n'
+            << "addr " << myClass.getAddress() << '\n'
+            << "actual " << myClass.getActuality() << '\n'
+            << "type " << myClass.getType() << '\n';
+        return out;
+    };
+
     void inputType() {
         Input in;
         string msg = "1. Машино место\n"
@@ -45,11 +59,11 @@ public:
         return;
     }
 
-    void setType(int type){
+    void setType(int type) {
         this->type = type;
     }
 
-    string printType(){
+    string printType() {
         switch (type) {
             case 1:
                 return "Машино место";
@@ -62,7 +76,7 @@ public:
         }
     }
 
-    int getType(){
+    int getType() {
         return type;
     }
 };

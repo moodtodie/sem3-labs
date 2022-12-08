@@ -56,8 +56,6 @@ protected:
     }
 
 public:
-    Immovable() = default;
-
     Immovable(unsigned int id, const string &phone = nullptr, const string &email = nullptr, float cost = -1,
               double square = -1,
               const std::string &address = nullptr, bool actuality = true) {

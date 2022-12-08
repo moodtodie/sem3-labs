@@ -37,6 +37,23 @@ public:
              << getContact() << endl << lineStr;
     }
 
+    friend ostream &operator<<(ostream &out, Empty &myClass) {
+        out << "class house\n"
+            << "id " << myClass.getId() << '\n'
+            << "phone " << myClass.getMobile() << '\n'
+            << "email " << myClass.getEmail() << '\n'
+            << "cost " << myClass.getCost() << '\n'
+            << "sqr " << myClass.getSquare() << '\n'
+            << "addr " << myClass.getAddress() << '\n'
+            << "actual " << myClass.getActuality() << '\n'
+            << "pond " << myClass.pond() << '\n'
+            << "plant " << myClass.plants() << '\n'
+            << "commun " << myClass.communications() << '\n'
+            << "suifcons " << myClass.suitableConstruction() << '\n'
+            << "suiffarm " << myClass.suitableFarming() << '\n';
+        return out;
+    };
+
     void setConstruction(bool suitable) {
         suitableForConstruction = suitable;
     }

@@ -12,9 +12,8 @@ class House : public Piece {
     int rooms;
     int parkingSpaces;
 public:
-    House() = default;
-
-    House(unsigned int id, const string &phonePrimary, const string &email, float cost, double square, const string &address, bool actuality,
+    House(unsigned int id, const string &phonePrimary, const string &email, float cost, double square,
+          const string &address, bool actuality,
           bool pond, bool plants, bool communications, int floors = 1, int rooms = 4, int parkingSpaces = 2)
             : Piece(id, phonePrimary, email, cost, square, address, actuality, pond, plants, communications) {
 
@@ -41,6 +40,24 @@ public:
              << "Растения     - " << boolToString(plants()) << endl
              << getContact() << endl << lineStr;
     }
+
+    friend ostream &operator<<(ostream &out, House &myClass) {
+        out << "class house\n"
+            << "id " << myClass.getId() << '\n'
+            << "phone " << myClass.getMobile() << '\n'
+            << "email " << myClass.getEmail() << '\n'
+            << "cost " << myClass.getCost() << '\n'
+            << "sqr " << myClass.getSquare() << '\n'
+            << "addr " << myClass.getAddress() << '\n'
+            << "actual " << myClass.getActuality() << '\n'
+            << "pond " << myClass.pond() << '\n'
+            << "plant " << myClass.plants() << '\n'
+            << "commun " << myClass.communications() << '\n'
+            << "parking " << myClass.getParkingSpace() << '\n'
+            << "rooms " << myClass.getRooms() << '\n'
+            << "floor " << myClass.getFloors() << '\n';
+        return out;
+    };
 
     void setFloors(int value) {
         floors = value;

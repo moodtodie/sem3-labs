@@ -20,7 +20,7 @@ public:
         isHaveBalcony(haveBalcony);
     }
 
-    void printInfo() override{
+    void printInfo() override {
         cout << "  Информация о квартире:" << endl
              << "ID: " << getId();
         if (!getActuality())
@@ -35,6 +35,21 @@ public:
              << "Есть балкон: " << boolToString(isHaveBalcony()) << endl
              << getContact() << endl << lineStr;
     }
+
+    friend ostream &operator<<(ostream &out, Flat &myClass) {
+        out << "class house\n"
+            << "id " << myClass.getId() << '\n'
+            << "phone " << myClass.getMobile() << '\n'
+            << "email " << myClass.getEmail() << '\n'
+            << "cost " << myClass.getCost() << '\n'
+            << "sqr " << myClass.getSquare() << '\n'
+            << "addr " << myClass.getAddress() << '\n'
+            << "actual " << myClass.getActuality() << '\n'
+            << "rooms " << myClass.getRooms() << '\n'
+            << "floor " << myClass.getFloor() << '\n'
+            << "balcony " << myClass.isHaveBalcony() << '\n';
+        return out;
+    };
 
     void setFloor(int value) {
         floor = value;

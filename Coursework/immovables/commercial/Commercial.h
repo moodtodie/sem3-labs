@@ -32,16 +32,16 @@ public:
              << getContact() << endl << lineStr;
     }
 
-    friend ostream &operator<<(ostream &out, Commercial &commercial) {
+    friend ostream &operator<<(ostream &out, Commercial &myClass) {
         out << "class commercial\n"
-            << "id " << commercial.getId() << '\n'
-            << "phone " << commercial.getMobile() << '\n'
-            << "email " << commercial.getEmail() << '\n'
-            << "cost " << commercial.getCost() << '\n'
-            << "sqr " << commercial.getSquare() << '\n'
-            << "addr " << commercial.getAddress() << '\n'
-            << "actual " << commercial.getActuality() << '\n'
-            << "type " << commercial.getType() << '\n';
+            << "id " << myClass.getId() << '\n'
+            << "phone " << myClass.getMobile() << '\n'
+            << "email " << myClass.getEmail() << '\n'
+            << "cost " << myClass.getCost() << '\n'
+            << "sqr " << myClass.getSquare() << '\n'
+            << "addr " << myClass.getAddress() << '\n'
+            << "actual " << myClass.getActuality() << '\n'
+            << "type " << myClass.getType() << '\n';
         return out;
     };
 
