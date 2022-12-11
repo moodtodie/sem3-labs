@@ -11,19 +11,22 @@
 class Commercial : public Immovable {
     int type;
 public:
-    Commercial() = default;
-
     Commercial(unsigned int id, const string &phone, const string &email, float cost, double square,
                const string &address, bool actuality, int type = -1) : Immovable(id, phone, email, cost, square,
                                                                                  address, actuality) {
         setType(type);
     }
 
+    ~Commercial() override = default;
+
     void printInfo() override {
         cout << "  Информация о помещение:" << endl
              << "ID: " << getId();
         if (!getActuality())
-            cout << " [Не актуально]" << endl;
+            if (!getActuality()) {
+                cout << endl << "Недвижимость была скрыта/удалена." << endl << lineStr;
+                return;
+            }
 
         cout << endl << "Стоимость: " << printCost() << endl
              << "Адрес: " << getAddress() << endl
@@ -44,18 +47,6 @@ public:
             << "type " << myClass.getType() << '\n';
         return out;
     };
-
-    void inputType() {
-        Input in;
-        string msg = "1. Офис\n"
-                     "2. Магазин, торговое помещение\n"
-                     "3. Склад\n"
-                     "4. Другое\n"
-                     "Выберите тип:";
-        int type = in.inputInt(1, 4, msg);
-        setType(type);
-        return;
-    }
 
     void setType(int type) {
         this->type = type;

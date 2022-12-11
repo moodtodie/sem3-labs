@@ -6,88 +6,80 @@
 #define COURSEWORK_INTERFACES_H
 
 #include <iostream>
+#include <synchapi.h>
 #include "../services/Exception.h"
+#include "../services/Storage.h"
+#include "../services/ObjectManager.h"
 #include "../services/Input.h"
 #include "../immovables/piece/House.h"
 #include "../immovables/piece/Empty.h"
 #include "../immovables/flat/Flat.h"
 #include "../immovables/parking/Parking.h"
 #include "../immovables/commercial/Commercial.h"
+#include "../services/ObjectManager.h"
 
 using namespace std;
 
 class Interfaces {
+    Storage storage;
     Input in;
+    ObjectManager objectManager;
+
+    unsigned int interfaceCode = 0;
+    unsigned int resentId = 0;
 
     const string title = "\tИнформационная система по продаже недвижимости\n";
-    const string mainMenu = "1. Поиск по ID\n"
-                            "2. Просмотр всей доступной недвижимость\n"
-                            "3. Добавить недвижимость\n"
-                            "0. Выход\n";
-    const string findByID = "Введите ID(-1 что-бы вернуться назад):";
+
+    template<typename T>
+    void printListItem(vector<T> array, unsigned int id);
 
 public:
-    void printMainMenu();
+    void run();
 
-    void printFindByID();
+    void printMainMenu();   //  0
 
-    void printViewAll();
+    int selectorMainMenu();
 
-    void printAddNew();
+    void printFindByID();   //  100
 
-    void selectorAddNew() {
-        int choice; // input int func
-        switch (in.inputInt(0, 5, "Выберите тип недвижимости:")) {
-            case 1:
-//                addHouse();
-                break;
-            case 2:
-//                addEmpty();
-                break;
-            case 3:
-//                addFlat();
-                break;
-            case 4:
-//                addParking();
-                break;
-            case 5:
-//                addCommercial();
-                break;
-            case 0:
-                printMainMenu();
-                break;
-            default:
-                throw Exception("Не существующее значение.", -1);
-        };
-    }
+    int selectorFindByID();
 
-    void exit();
+    void printViewAll();    //  200
 
-    void selectorMainMenu();
+    int selectorViewAll();
 
-    void selectorFindByID() {
-        int choice; // input int func
-        switch (in.inputInt(-1, 65000)) {
-            case -1:
-                exit();
-                break;
-            default:
-                throw Exception("Не существующее значение.", -1);
-        };
-    }
+                            //  210
+    void printViewItem(string className, unsigned int id, bool advancedMode = false);
 
-    void selectorViewAll() {
-        switch (in.inputInt(0, 1, "Выберите действие:")) {
-            case 1:
-                printFindByID();
-                break;
-            case 0:
-                printMainMenu();
-                break;
-            default:
-                throw Exception("Не существующее значение.", -1);
-        };
-    }
+    int selectorViewItem();
+
+    void printAddNew();     //  300
+
+    void selectorAddNew();
+
+    void actionOnObject(unsigned int id, bool justHide = false);
+
+    template<typename T>
+    bool editObject(T &object);
+
+    template<typename T>
+    void editImmovable(T &object);
+
+    template<typename T>
+    void editPiece(T &object);
+
+    void editHouse(House &object);
+
+    void editEmpty(Empty &object);
+
+    void editFlat(Flat &object);
+
+    void editParking(Parking &object);
+
+    void editCommercial(Commercial &object);
+
+    template<typename T>
+    void hideObject(T &object);
 };
 
 #endif //COURSEWORK_INTERFACES_H

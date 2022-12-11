@@ -14,17 +14,21 @@ public:
 
     Empty(unsigned int id, const string &phonePrimary, const string &email, float cost, double square,
           const string &address, bool actuality, bool pond, bool plants, bool communications,
-          bool suitableForConstruction = true, bool suitableForFarming = true)
-            : Piece(id, phonePrimary, email, cost, square, address, actuality, pond, plants, communications) {
+          bool suitableForConstruction = true, bool suitableForFarming = true) :
+            Piece(id, phonePrimary, email, cost, square, address, actuality, pond, plants, communications) {
         setConstruction(suitableForConstruction);
         setFarming(suitableForFarming);
     }
 
+    ~Empty() override = default;
+
     void printInfo() override {
         cout << "  Информация о участке:" << endl
              << "ID: " << getId();
-        if (!getActuality())
-            cout << " [Не актуально]" << endl;
+        if (!getActuality()) {
+            cout << endl << "Недвижимость была скрыта/удалена." << endl << lineStr;
+            return;
+        }
 
         cout << endl << "Стоимость: " << printCost() << endl
              << "Адрес: " << getAddress() << endl
@@ -38,7 +42,7 @@ public:
     }
 
     friend ostream &operator<<(ostream &out, Empty &myClass) {
-        out << "class house\n"
+        out << "class empty\n"
             << "id " << myClass.getId() << '\n'
             << "phone " << myClass.getMobile() << '\n'
             << "email " << myClass.getEmail() << '\n'
@@ -70,6 +74,5 @@ public:
         return suitableForFarming;
     }
 };
-
 
 #endif //COURSEWORK_EMPTY_H

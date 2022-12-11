@@ -20,11 +20,15 @@ public:
         isHaveBalcony(haveBalcony);
     }
 
+    ~Flat() override = default;
+
     void printInfo() override {
         cout << "  Информация о квартире:" << endl
              << "ID: " << getId();
-        if (!getActuality())
-            cout << " [Не актуально]" << endl;
+        if (!getActuality()) {
+            cout << endl << "Недвижимость была скрыта/удалена." << endl << lineStr;
+            return;
+        }
 
         cout << endl << "Стоимость: " << printCost() << endl
              << "Адрес: " << getAddress() << endl
@@ -37,7 +41,7 @@ public:
     }
 
     friend ostream &operator<<(ostream &out, Flat &myClass) {
-        out << "class house\n"
+        out << "class flat\n"
             << "id " << myClass.getId() << '\n'
             << "phone " << myClass.getMobile() << '\n'
             << "email " << myClass.getEmail() << '\n'

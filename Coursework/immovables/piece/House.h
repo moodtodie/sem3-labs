@@ -16,17 +16,20 @@ public:
           const string &address, bool actuality,
           bool pond, bool plants, bool communications, int floors = 1, int rooms = 4, int parkingSpaces = 2)
             : Piece(id, phonePrimary, email, cost, square, address, actuality, pond, plants, communications) {
-
         setFloors(floors);
         setRooms(rooms);
         setParking(parkingSpaces);
     }
 
+    ~House() override = default;
+
     void printInfo() override {
         cout << "  Информация о доме/коттедже:" << endl
              << "ID: " << getId();
-        if (!getActuality())
-            cout << " [Не актуально]" << endl;
+        if (!getActuality()) {
+            cout << endl << "Недвижимость была скрыта/удалена." << endl << lineStr;
+            return;
+        }
 
         cout << endl << "Стоимость: " << printCost() << endl
              << "Адрес: " << getAddress() << endl

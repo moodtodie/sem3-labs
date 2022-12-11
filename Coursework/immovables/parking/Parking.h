@@ -7,11 +7,6 @@
 
 #include "../Immovable.h"
 
-/**
- - Тип (, , )
- - Наличие ямы (Только для Тип: Гараж)
- */
-
 class Parking : public Immovable {
     int type;
 public:
@@ -21,11 +16,15 @@ public:
         setType(type);
     }
 
+    ~Parking() override = default;
+
     void printInfo() override {
         cout << "  Информация о парковке:" << endl
              << "ID: " << getId();
-        if (!getActuality())
-            cout << " [Не актуально]" << endl;
+        if (!getActuality()) {
+            cout << endl << "Недвижимость была скрыта/удалена." << endl << lineStr;
+            return;
+        }
 
         cout << endl << "Стоимость: " << printCost() << endl
              << "Адрес: " << getAddress() << endl
@@ -35,7 +34,7 @@ public:
     }
 
     friend ostream &operator<<(ostream &out, Parking &myClass) {
-        out << "class house\n"
+        out << "class parking\n"
             << "id " << myClass.getId() << '\n'
             << "phone " << myClass.getMobile() << '\n'
             << "email " << myClass.getEmail() << '\n'
@@ -46,18 +45,6 @@ public:
             << "type " << myClass.getType() << '\n';
         return out;
     };
-
-    void inputType() {
-        Input in;
-        string msg = "1. Машино место\n"
-                     "2. Бокс\n"
-                     "3. Гараж\n"
-                     "4. Другое\n"
-                     "Выберите тип:";
-        int type = in.inputInt(1, 4, msg);
-        setType(type);
-        return;
-    }
 
     void setType(int type) {
         this->type = type;

@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <vector>
 
 using namespace std;
 
@@ -16,15 +17,23 @@ class Immovable {
         string email;
     public:
         ContactDetails(const string &phonePrimary = nullptr, const string &email = nullptr) {
-            phoneNumber = phonePrimary;
-            this->email = email;
+            setMobile(phonePrimary);
+            setEmail(email);
         }
 
-        string getMobile(){
+        void setMobile(const string &phone) {
+            phoneNumber = phone;
+        }
+
+        string getMobile() {
             return phoneNumber;
         }
 
-        string getEmail(){
+        void setEmail(const string &email) {
+            this->email = email;
+        }
+
+        string getEmail() {
             return email;
         }
 
@@ -48,7 +57,8 @@ class Immovable {
     ContactDetails *contact;
 
 protected:
-    string lineStr = "----------------------------\n";
+    string lineStr = "----------------------------\n\n";
+
     string boolToString(bool positive) {
         if (positive)
             return "Да";
@@ -57,45 +67,46 @@ protected:
 
 public:
     Immovable(unsigned int id, const string &phone = nullptr, const string &email = nullptr, float cost = -1,
-              double square = -1,
-              const std::string &address = nullptr, bool actuality = true) {
-        this->id = id;  // Сделать исключение, если ID - не указан, то ОШИБКА.
+              double square = -1, const string &address = nullptr, bool actuality = true) {
+        this->id = id;
         contact = new Immovable::ContactDetails(phone, email);
         setCost(cost);
         setSquare(square);
         setAddress(address);
-        setActuality(true);
+        setActuality(actuality);
     }
 
-    ~Immovable() = default;
+    virtual ~Immovable() = default;
 
     virtual void printInfo() = 0;
 
     //  contact
-//    void setContact(const string &mobile = nullptr, const string &email = nullptr) {
-//        contact = *new ContactDetails(mobile, email);
-//    }
-
-
-    //  contact
-    std::string getContact() {
+    string getContact() {
         return contact->getContactDetails();
     }
 
-    string getMobile(){
+    void setMobile(const string &newMobile) {
+        contact->setMobile(newMobile);
+    }
+
+    string getMobile() {
         return contact->getMobile();
     }
 
-    string getEmail(){
+    void setEmail(const string &newEmail) {
+        contact->setEmail(newEmail);
+    }
+
+    string getEmail() {
         return contact->getEmail();
     }
 
     //  address
-    void setAddress(const std::string &value) {
+    void setAddress(const string &value) {
         address = value;
     }
 
-    std::string getAddress() {
+    string getAddress() {
         return address;
     }
 
@@ -104,10 +115,10 @@ public:
         square = value;
     }
 
-    std::string printSquare() {
-        std::stringstream stream;
-        stream << std::fixed << std::setprecision(2) << square;
-        return stream.str() + " m^2";
+    string printSquare() {
+        stringstream stream;
+        stream << fixed << setprecision(1) << square;
+        return stream.str() + " м^2";
     }
 
     double getSquare() {
@@ -119,9 +130,9 @@ public:
         cost = value;
     }
 
-    std::string printCost() {
-        std::stringstream stream;
-        stream << std::fixed << std::setprecision(2) << cost;
+    string printCost() {
+        stringstream stream;
+        stream << fixed << setprecision(2) << cost;
         return stream.str() + "$";
     }
 
@@ -130,18 +141,11 @@ public:
     }
 
     // id
-    bool cmpId(int id) {
-        if (this->id == id)
-            return true;
-        return false;
-    }
-
     int getId() {
         return id;
     }
 
     //  actuality
-
     void setActuality(bool isActual) {
         this->isActual = isActual;
     }
@@ -150,6 +154,5 @@ public:
         return isActual;
     }
 };
-
 
 #endif //COURSEWORK_IMMOVABLE_H

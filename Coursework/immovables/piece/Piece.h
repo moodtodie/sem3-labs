@@ -5,7 +5,6 @@
 #ifndef COURSEWORK_PIECE_H
 #define COURSEWORK_PIECE_H
 
-#include <vector>
 #include "../Immovable.h"
 
 class Piece : public Immovable {
@@ -15,14 +14,14 @@ class Piece : public Immovable {
 
 public:
     Piece(unsigned int id, const string &phonePrimary, const string &email, float cost, double square,
-          const string &address, bool actuality,
-          bool pond = false, bool plants = true, bool communications = false) : Immovable(id, phonePrimary,
-          email, cost, square, address, actuality) {
-
+          const string &address, bool actuality, bool pond = false, bool plants = true, bool communications = false)
+            : Immovable(id, phonePrimary, email, cost, square, address, actuality) {
         setPond(pond);
         setPlants(plants);
         setCommunications(communications);
     }
+
+    ~Piece() override = default;
 
     void setPond(bool available) {
         availablePond = available;
@@ -47,8 +46,6 @@ public:
     bool communications() {
         return availabilityOfCommunications;
     }
-
 };
-
 
 #endif //COURSEWORK_PIECE_H
